@@ -1,0 +1,318 @@
+/* VSCode-inspired color scheme */
+:root {
+    --bg-primary: #1e1e1e;
+    --bg-secondary: #252526;
+    --bg-tertiary: #2d2d30;
+    --bg-hover: #2a2d2e;
+    --bg-active: #37373d;
+    --border-color: #3e3e42;
+    --text-primary: #cccccc;
+    --text-secondary: #858585;
+    --text-muted: #6a6a6a;
+    --accent-blue: #007acc;
+    --accent-blue-hover: #1a8cd8;
+    --activity-bar-bg: #333337;
+    --sidebar-bg: #252526;
+    --editor-bg: #1e1e1e;
+    --status-bar-bg: #007acc;
+    --line-number-color: #858585;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Activity Bar */
+.activity-bar {
+    width: 48px;
+    background-color: var(--activity-bar-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 0;
+    border-right: 1px solid var(--border-color);
+}
+
+.activity-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: background-color 0.2s;
+    position: relative;
+}
+
+.activity-icon:hover {
+    background-color: var(--bg-hover);
+}
+
+.activity-icon.active {
+    color: var(--text-primary);
+}
+
+.activity-icon.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--accent-blue);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: var(--sidebar-bg);
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border-color);
+}
+
+.sidebar-header {
+    padding: 8px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 4px 0;
+}
+
+.file-tree {
+    padding: 4px 0;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    padding: 4px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text-primary);
+    transition: background-color 0.15s;
+}
+
+.file-item:hover {
+    background-color: var(--bg-hover);
+}
+
+.file-icon {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.file-name {
+    flex: 1;
+}
+
+/* Editor Area */
+.editor-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--editor-bg);
+}
+
+.editor-tabs {
+    display: flex;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 8px;
+    overflow-x: auto;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: var(--bg-tertiary);
+    border-right: 1px solid var(--border-color);
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text-secondary);
+    transition: background-color 0.15s;
+    min-width: 120px;
+}
+
+.tab:hover {
+    background-color: var(--bg-hover);
+}
+
+.tab.active {
+    background-color: var(--editor-bg);
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--editor-bg);
+    margin-bottom: -1px;
+}
+
+.tab-icon {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.tab-name {
+    flex: 1;
+}
+
+.tab-close {
+    margin-left: 8px;
+    opacity: 0;
+    transition: opacity 0.15s;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.tab:hover .tab-close {
+    opacity: 0.7;
+}
+
+.tab:hover .tab-close:hover {
+    opacity: 1;
+}
+
+.editor-content {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.editor-line-numbers {
+    width: 50px;
+    padding: 16px 8px;
+    text-align: right;
+    font-size: 14px;
+    color: var(--line-number-color);
+    user-select: none;
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.editor-text {
+    flex: 1;
+    padding: 16px 24px;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+    overflow-y: auto;
+    white-space: pre;
+}
+
+.editor-text .line {
+    min-height: 20px;
+    display: block;
+}
+
+/* Syntax highlighting */
+.comment {
+    color: #6a9955;
+}
+
+.string {
+    color: #ce9178;
+}
+
+.keyword {
+    color: #569cd6;
+}
+
+.variable {
+    color: #9cdcfe;
+}
+
+.operator {
+    color: #d4d4d4;
+}
+
+.punctuation {
+    color: #d4d4d4;
+}
+
+/* Status Bar */
+.status-bar {
+    height: 22px;
+    background-color: var(--status-bar-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    font-size: 12px;
+    color: #ffffff;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.status-left,
+.status-right {
+    display: flex;
+    gap: 16px;
+}
+
+.status-item {
+    cursor: default;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-tertiary);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bg-active);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+    
+    .activity-bar {
+        width: 40px;
+    }
+    
+    .activity-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
