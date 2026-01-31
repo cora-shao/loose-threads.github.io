@@ -59,7 +59,7 @@ body {
     justify-content: center;
     cursor: pointer;
     color: var(--text-secondary);
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, color 0.2s;
     position: relative;
 }
 
@@ -79,6 +79,36 @@ body {
     bottom: 0;
     width: 2px;
     background-color: var(--accent-blue);
+}
+
+.activity-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.activity-icon.has-badge {
+    position: relative;
+}
+
+.activity-badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: center;
+    background-color: var(--accent-blue);
+    color: #fff;
+    border-radius: 8px;
+}
+
+.activity-bar-spacer {
+    flex: 1;
+    min-height: 24px;
 }
 
 /* Sidebar */
@@ -126,10 +156,118 @@ body {
 
 .file-icon {
     margin-right: 8px;
-    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
+.file-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.file-icon.file-html { color: #e44b23; }
+.file-icon.file-css { color: #1572b6; }
+.file-icon.file-md { color: #519aba; }
+.file-icon.file-plain { color: var(--text-secondary); }
+
 .file-name {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Git status in Explorer */
+.git-status {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 0 4px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.git-untracked {
+    color: #4ec9b0;
+}
+
+.git-modified {
+    color: #ce9178;
+}
+
+/* Folder section (VSCode Explorer tree) */
+.folder-section {
+    display: flex;
+    align-items: center;
+    padding: 4px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text-primary);
+    user-select: none;
+}
+
+.folder-section:hover {
+    background-color: var(--bg-hover);
+}
+
+.folder-toggle {
+    width: 16px;
+    margin-right: 4px;
+    font-size: 10px;
+    color: var(--text-secondary);
+    flex-shrink: 0;
+}
+
+.folder-icon {
+    margin-right: 6px;
+    display: flex;
+    align-items: center;
+    color: #e8ab53;
+}
+
+.folder-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.folder-name {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.folder-children {
+    padding-left: 8px;
+}
+
+/* OUTLINE / TIMELINE sections */
+.sidebar-section {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-color);
+    user-select: none;
+}
+
+.sidebar-section:hover {
+    background-color: var(--bg-hover);
+}
+
+.sidebar-section .section-toggle {
+    width: 16px;
+    margin-right: 4px;
+    font-size: 10px;
+    flex-shrink: 0;
+}
+
+.sidebar-section .section-title {
     flex: 1;
 }
 
@@ -175,7 +313,18 @@ body {
 
 .tab-icon {
     margin-right: 8px;
-    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.tab-icon svg {
+    width: 16px;
+    height: 16px;
+    color: var(--text-secondary);
+}
+
+.tab.active .tab-icon svg {
+    color: var(--accent-blue);
 }
 
 .tab-name {

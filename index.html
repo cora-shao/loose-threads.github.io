@@ -8,22 +8,43 @@
 </head>
 <body>
     <div class="container">
-        <!-- Activity Bar -->
+        <!-- Activity Bar (VSCode-style) -->
         <div class="activity-bar">
             <div class="activity-icon active" title="Explorer">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                    <path d="M2 2v12h12V2H2zm1 1h10v10H3V3zm1 1v8h8V4H4zm1 1h6v1H5V5zm0 2h6v1H5V7zm0 2h6v1H5V9z"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
                 </svg>
             </div>
             <div class="activity-icon" title="Search">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
                 </svg>
             </div>
-            <div class="activity-icon" title="Source Control">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM1.5 8a6.5 6.5 0 1 1 13 0 6.5 6.5 0 0 1-13 0z"/>
-                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            <div class="activity-icon has-badge" title="Source Control">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.42 3.58-8 8-8 1.85 0 3.55.63 4.9 1.69L5.69 16.9C4.63 15.55 4 13.85 4 12zm8 8c-1.85 0-3.55-.63-4.9-1.69L18.31 7.1C19.37 8.45 20 10.15 20 12c0 4.42-3.58 8-8 8z"/>
+                </svg>
+                <span class="activity-badge">4</span>
+            </div>
+            <div class="activity-icon" title="Run and Debug">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+            </div>
+            <div class="activity-icon" title="Extensions">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                </svg>
+            </div>
+            <div class="activity-bar-spacer"></div>
+            <div class="activity-icon" title="Account">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+            </div>
+            <div class="activity-icon" title="Settings">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.04.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
                 </svg>
             </div>
         </div>
@@ -35,14 +56,43 @@
             </div>
             <div class="sidebar-content">
                 <div class="file-tree">
-                    <div class="file-item">
-                        <span class="file-icon">📄</span>
-                        <span class="file-name">index.html</span>
+                    <div class="folder-section">
+                        <span class="folder-toggle">▼</span>
+                        <span class="folder-icon">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M1.5 3h13l-1.5 9h-10L1.5 3z"/></svg>
+                        </span>
+                        <span class="folder-name">LOOSE-THREADS.GITHUB.IO</span>
                     </div>
-                    <div class="file-item">
-                        <span class="file-icon">📄</span>
-                        <span class="file-name">styles.css</span>
+                    <div class="folder-children">
+                        <div class="file-item">
+                            <span class="file-icon file-plain"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2h12v12H2V2zm1.5 1.5v9h9v-9h-9z"/></svg></span>
+                            <span class="file-name">.nojekyll</span>
+                            <span class="git-status git-untracked">U</span>
+                        </div>
+                        <div class="file-item">
+                            <span class="file-icon file-html"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2h12v12H2V2zm1.5 1.5v9h9v-9h-9z"/></svg></span>
+                            <span class="file-name">index.html</span>
+                            <span class="git-status git-untracked">U</span>
+                        </div>
+                        <div class="file-item">
+                            <span class="file-icon file-md"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2h12v12H2V2zm1.5 1.5v9h9v-9h-9z"/></svg></span>
+                            <span class="file-name">README.md</span>
+                            <span class="git-status git-modified">M</span>
+                        </div>
+                        <div class="file-item">
+                            <span class="file-icon file-css"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2h12v12H2V2zm1.5 1.5v9h9v-9h-9z"/></svg></span>
+                            <span class="file-name">styles.css</span>
+                            <span class="git-status git-untracked">U</span>
+                        </div>
                     </div>
+                </div>
+                <div class="sidebar-section">
+                    <span class="section-toggle">▶</span>
+                    <span class="section-title">OUTLINE</span>
+                </div>
+                <div class="sidebar-section">
+                    <span class="section-toggle">▶</span>
+                    <span class="section-title">TIMELINE</span>
                 </div>
             </div>
         </div>
@@ -51,8 +101,10 @@
         <div class="editor-area">
             <div class="editor-tabs">
                 <div class="tab active">
-                    <span class="tab-icon">📄</span>
-                    <span class="tab-name">home.md</span>
+                    <span class="tab-icon">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2v12h12V2H2zm1.5 1.5h9v9h-9v-9z"/></svg>
+                    </span>
+                    <span class="tab-name">home_page</span>
                     <span class="tab-close">×</span>
                 </div>
             </div>
@@ -66,7 +118,7 @@
                 </div>
                 <div class="editor-text">
                     <div class="line">
-                        <span class="comment"># Hi, I'm a DUT </span><span class="string">&lt;insert name&gt;</span>
+                        <span class="comment"># Hi, I'm a DUT </span>
                     </div>
                     <div class="line"></div>
                     <div class="line">
@@ -81,14 +133,17 @@
         </div>
     </div>
 
-    <!-- Status Bar -->
+    <!-- Status Bar (VSCode-style) -->
     <div class="status-bar">
         <div class="status-left">
+            <span class="status-item status-branch">main *</span>
+            <span class="status-item status-errors">(x) 0</span>
+            <span class="status-item status-warnings">△ 0</span>
+        </div>
+        <div class="status-right">
             <span class="status-item">Ln 5, Col 50</span>
             <span class="status-item">Spaces: 2</span>
             <span class="status-item">UTF-8</span>
-        </div>
-        <div class="status-right">
             <span class="status-item">Markdown</span>
         </div>
     </div>
