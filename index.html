@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Personal Site</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -84,6 +85,11 @@
                             <span class="file-name">styles.css</span>
                             <span class="git-status git-untracked">U</span>
                         </div>
+                        <div class="file-item" data-file="course_documentation">
+                            <span class="file-icon file-md"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2h12v12H2V2zm1.5 1.5v9h9v-9h-9z"/></svg></span>
+                            <span class="file-name">course_documentation</span>
+                            <span class="git-status git-untracked">U</span>
+                        </div>
                     </div>
                 </div>
                 <div class="sidebar-section">
@@ -99,8 +105,8 @@
 
         <!-- Editor Area -->
         <div class="editor-area">
-            <div class="editor-tabs">
-                <div class="tab active">
+            <div class="editor-tabs" id="editor-tabs">
+                <div class="tab active" data-tab="home_page">
                     <span class="tab-icon">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2v12h12V2H2zm1.5 1.5h9v9h-9v-9z"/></svg>
                     </span>
@@ -109,24 +115,66 @@
                 </div>
             </div>
             <div class="editor-content">
-                <div class="editor-line-numbers">
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                    <span>5</span>
+                <!-- Home Page Content -->
+                <div class="tab-content active" data-content="home_page">
+                    <div class="editor-line-numbers">
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                    </div>
+                    <div class="editor-text">
+                        <div class="line">
+                            <span class="comment"># Hi, I'm a DUT </span>
+                        </div>
+                        <div class="line"></div>
+                        <div class="line">
+                            <span class="comment">// WIP - come back later! </span>
+                        </div>
+                        <div class="line"></div>
+                        <div class="line">
+                            <span class="keyword">const</span> <span class="variable">about</span> <span class="operator">=</span> <span class="string">"Construction sites are dangerous areas to play around in."</span><span class="punctuation">;</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="editor-text">
-                    <div class="line">
-                        <span class="comment"># Hi, I'm a DUT </span>
-                    </div>
-                    <div class="line"></div>
-                    <div class="line">
-                        <span class="comment">// WIP - come back later! </span>
-                    </div>
-                    <div class="line"></div>
-                    <div class="line">
-                        <span class="keyword">const</span> <span class="variable">about</span> <span class="operator">=</span> <span class="string">"Construction sites are dangerous areas to play around in."</span><span class="punctuation">;</span>
+                
+                <!-- Course Documentation Content -->
+                <div class="tab-content notion-content" data-content="course_documentation">
+                    <div class="notion-page">
+                        <div class="notion-header">
+                            <h1 class="notion-title">Course Documentation</h1>
+                        </div>
+                        <div class="notion-body">
+                            <!-- 2025WT1 -->
+                            <div class="notion-section">
+                                <h2 class="notion-heading">2025WT1</h2>
+                                <div class="notion-course-list">
+                                    <a href="courses/course1.html" class="notion-course-link">
+                                        <div class="notion-course-item">
+                                            <span class="course-name">Course Name 1</span>
+                                        </div>
+                                    </a>
+                                    <a href="courses/course2.html" class="notion-course-link">
+                                        <div class="notion-course-item">
+                                            <span class="course-name">Course Name 2</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- 2025WT2 -->
+                            <div class="notion-section">
+                                <h2 class="notion-heading">2025WT2</h2>
+                                <div class="notion-course-list">
+                                    <a href="courses/course3.html" class="notion-course-link">
+                                        <div class="notion-course-item">
+                                            <span class="course-name">Course Name 3</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
