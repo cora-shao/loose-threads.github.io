@@ -37,6 +37,61 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    // Activity Bar view switching (Explorer, Portfolio, etc.)
+    const activityIcons = document.querySelectorAll('.activity-icon[data-view]');
+    const explorerSidebar = document.getElementById('explorer-sidebar');
+    const portfolioSidebar = document.getElementById('portfolio-sidebar');
+    
+    activityIcons.forEach(icon => {
+        icon.addEventListener('click', () => {
+            const view = icon.getAttribute('data-view');
+            switchView(view, icon);
+        });
+    });
+    
+    function switchView(view, icon) {
+        // Update activity icons
+        document.querySelectorAll('.activity-icon').forEach(i => {
+            i.classList.remove('active');
+        });
+        icon.classList.add('active');
+        
+        // Switch sidebars
+        if (view === 'portfolio') {
+            portfolioSidebar.style.display = 'flex';
+            explorerSidebar.style.display = 'none';
+        } else if (view === 'explorer') {
+            explorerSidebar.style.display = 'flex';
+            portfolioSidebar.style.display = 'none';
+        }
+    }
+
+    // Portfolio section toggles (HW and Systems)
+    document.querySelectorAll('.portfolio-section-header').forEach(header => {
+        const toggleId = header.getAttribute('data-toggle');
+        const content = document.getElementById(`${toggleId}-content`);
+        const toggle = header.querySelector('.portfolio-toggle');
+        
+        // Initialize: sections are expanded by default (▼ means expanded)
+        if (content) {
+            content.style.display = 'block';
+        }
+        
+        header.addEventListener('click', () => {
+            if (!content) return;
+            
+            const isExpanded = content.style.display !== 'none';
+            
+            if (isExpanded) {
+                content.style.display = 'none';
+                toggle.textContent = '▶';
+            } else {
+                content.style.display = 'block';
+                toggle.textContent = '▼';
+            }
+        });
+    });
 });
 
 function openTab(tabId) {
